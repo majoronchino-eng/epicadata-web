@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Epica Data — Sistema Nervioso de IA para tu Empresa</title>
-    <meta name="description" content="Epica Data transforma PyMEs con inteligencia artificial. Analizamos, conectamos y automatizamos cada área de tu negocio con Epica OS.">
-    <meta name="keywords" content="inteligencia artificial pymes, BI argentina, dashboard CEO, epica data, software empresarial IA">
+    <meta name="description" content="Epica Data transforma empresas con inteligencia artificial. Analizamos, conectamos y automatizamos cada área de tu negocio con Epica OS.">
+    <meta name="keywords" content="inteligencia artificial empresas, BI argentina, dashboard CEO, epica data, software empresarial IA, consultoría datos">
     <meta property="og:title" content="Epica Data — IA que transforma tu empresa">
-    <meta property="og:description" content="El sistema nervioso inteligente para PyMEs argentinas. Alertas, predicciones y decisiones basadas en datos reales.">
+    <meta property="og:description" content="El sistema nervioso inteligente para empresas argentinas. Alertas, predicciones y decisiones basadas en datos reales.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://epicadata.com.ar">
+    <meta property="og:url" content="https://www.epicadata.ai">
+    <meta property="og:image" content="https://www.epicadata.ai/og-image.jpg">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23111D2E'/><rect x='4' y='26' width='24' height='2' rx='1' fill='%23C8A555'/><rect x='6' y='4' width='20' height='3' rx='1' fill='%23C8A555'/><rect x='8' y='7' width='2' height='19' fill='%23C8A555'/><rect x='15' y='7' width='2' height='19' fill='%23C8A555'/><rect x='22' y='7' width='2' height='19' fill='%23C8A555'/></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -33,7 +35,6 @@
             --danger: #ef4444;
             --info: #3b82f6;
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body {
@@ -43,76 +44,37 @@
             overflow-x: hidden;
             background: var(--white);
         }
-
         /* ═══ ANIMATIONS ═══ */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
             transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
         .reveal-left {
-            opacity: 0;
-            transform: translateX(-50px);
+            opacity: 0; transform: translateX(-50px);
             transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .reveal-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
+        .reveal-left.visible { opacity: 1; transform: translateX(0); }
         .reveal-right {
-            opacity: 0;
-            transform: translateX(50px);
+            opacity: 0; transform: translateX(50px);
             transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .reveal-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        .reveal-scale {
-            opacity: 0;
-            transform: scale(0.9);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        .reveal-scale.visible {
-            opacity: 1;
-            transform: scale(1);
-        }
+        .reveal-right.visible { opacity: 1; transform: translateX(0); }
+        .reveal-scale { opacity: 0; transform: scale(0.9); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .reveal-scale.visible { opacity: 1; transform: scale(1); }
         .stagger-1 { transition-delay: 0.1s; }
         .stagger-2 { transition-delay: 0.2s; }
         .stagger-3 { transition-delay: 0.3s; }
         .stagger-4 { transition-delay: 0.4s; }
         .stagger-5 { transition-delay: 0.5s; }
-
         @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
         @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-        @keyframes shimmer {
-            0% { background-position: -200% 0; }
-            100% { background-position: 200% 0; }
-        }
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-        @keyframes blink {
-            0%, 100% { border-color: var(--gold); }
-            50% { border-color: transparent; }
-        }
         @keyframes glow-pulse {
             0%, 100% { box-shadow: 0 0 20px rgba(200, 165, 85, 0.1); }
             50% { box-shadow: 0 0 40px rgba(200, 165, 85, 0.25); }
         }
-        @keyframes dash-draw {
-            to { stroke-dashoffset: 0; }
-        }
-        @keyframes counter-glow {
-            0% { text-shadow: 0 0 10px rgba(200,165,85,0); }
-            50% { text-shadow: 0 0 20px rgba(200,165,85,0.4); }
-            100% { text-shadow: 0 0 10px rgba(200,165,85,0); }
-        }
+        @keyframes dash-draw { to { stroke-dashoffset: 0; } }
         @keyframes slideInChat {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
@@ -123,7 +85,10 @@
             90% { opacity: 1; }
             100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
         }
-
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
         /* ═══ NAV ═══ */
         nav {
             position: fixed; top: 0; width: 100%; z-index: 100;
@@ -144,23 +109,18 @@
             display: flex; align-items: center; justify-content: space-between;
             height: 70px;
         }
-        .logo {
-            display: flex; align-items: center; gap: 0.6rem;
-            text-decoration: none;
-        }
+        .logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
         .logo-icon { width: 36px; height: 36px; }
         .logo-text {
             font-family: 'Playfair Display', serif;
             font-size: 1.3rem; font-weight: 700;
-            color: var(--gold);
-            letter-spacing: 2px;
+            color: var(--gold); letter-spacing: 2px;
         }
         .nav-links { display: flex; gap: 2rem; align-items: center; }
         .nav-links a {
             color: var(--gray-300); text-decoration: none;
             font-size: 0.9rem; font-weight: 500;
-            transition: color 0.3s;
-            position: relative;
+            transition: color 0.3s; position: relative;
         }
         .nav-links a::after {
             content: ''; position: absolute;
@@ -177,37 +137,28 @@
         }
         .btn-nav::after { display: none; }
         .btn-nav:hover { background: var(--gold-light); }
-
         /* ═══ HERO ═══ */
         .hero {
             background: linear-gradient(135deg, var(--navy) 0%, #0D1620 50%, var(--navy-light) 100%);
             min-height: 100vh;
             display: flex; align-items: center;
             padding: 6rem 2rem 4rem;
-            position: relative;
-            overflow: hidden;
+            position: relative; overflow: hidden;
         }
-        .hero-particles {
-            position: absolute; inset: 0; pointer-events: none;
-        }
+        .hero-particles { position: absolute; inset: 0; pointer-events: none; }
         .hero-particles .particle {
-            position: absolute;
-            width: 4px; height: 4px;
-            background: var(--gold);
-            border-radius: 50%;
-            opacity: 0;
-            animation: particleFloat linear infinite;
+            position: absolute; width: 4px; height: 4px;
+            background: var(--gold); border-radius: 50%;
+            opacity: 0; animation: particleFloat linear infinite;
         }
         .hero::before {
-            content: '';
-            position: absolute; top: -50%; right: -20%;
+            content: ''; position: absolute; top: -50%; right: -20%;
             width: 800px; height: 800px;
             background: radial-gradient(circle, rgba(200, 165, 85, 0.06) 0%, transparent 70%);
             border-radius: 50%;
         }
         .hero::after {
-            content: '';
-            position: absolute; bottom: -30%; left: -10%;
+            content: ''; position: absolute; bottom: -30%; left: -10%;
             width: 600px; height: 600px;
             background: radial-gradient(circle, rgba(59, 130, 246, 0.04) 0%, transparent 70%);
             border-radius: 50%;
@@ -215,53 +166,41 @@
         .hero-inner {
             max-width: 1200px; margin: 0 auto; width: 100%;
             display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem;
-            align-items: center;
-            position: relative; z-index: 2;
+            align-items: center; position: relative; z-index: 2;
         }
         .hero-badge {
             display: inline-flex; align-items: center; gap: 0.5rem;
             background: rgba(200, 165, 85, 0.1);
             color: var(--gold);
-            padding: 0.45rem 1rem;
-            border-radius: 20px;
+            padding: 0.45rem 1rem; border-radius: 20px;
             font-size: 0.78rem; font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            letter-spacing: 1px; text-transform: uppercase;
             margin-bottom: 1.5rem;
             border: 1px solid rgba(200, 165, 85, 0.2);
             opacity: 0; animation: slideInChat 0.6s 0.2s forwards;
         }
         .hero-badge .badge-dot {
             width: 6px; height: 6px;
-            background: var(--success);
-            border-radius: 50%;
+            background: var(--success); border-radius: 50%;
             animation: pulse 2s infinite;
         }
         .hero h1 {
             font-family: 'Playfair Display', serif;
             font-size: clamp(2.2rem, 4vw, 3.6rem);
-            color: var(--white);
-            line-height: 1.12;
+            color: var(--white); line-height: 1.12;
             margin-bottom: 1.5rem;
             opacity: 0; animation: slideInChat 0.8s 0.4s forwards;
         }
-        .hero h1 span {
-            color: var(--gold);
-            position: relative;
-        }
+        .hero h1 span { color: var(--gold); position: relative; }
         .hero h1 span::after {
-            content: '';
-            position: absolute;
-            bottom: 2px; left: 0;
-            width: 100%; height: 3px;
+            content: ''; position: absolute;
+            bottom: 2px; left: 0; width: 100%; height: 3px;
             background: linear-gradient(90deg, var(--gold), transparent);
             border-radius: 2px;
         }
         .hero p {
-            color: var(--gray-300);
-            font-size: 1.1rem;
-            line-height: 1.7;
-            margin-bottom: 2rem;
+            color: var(--gray-300); font-size: 1.1rem;
+            line-height: 1.7; margin-bottom: 2rem;
             max-width: 520px;
             opacity: 0; animation: slideInChat 0.8s 0.6s forwards;
         }
@@ -271,21 +210,14 @@
         }
         .btn-primary {
             background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-            color: var(--navy);
-            padding: 0.9rem 2rem;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 1rem;
-            text-decoration: none;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
+            color: var(--navy); padding: 0.9rem 2rem;
+            border-radius: 8px; font-weight: 700; font-size: 1rem;
+            text-decoration: none; transition: all 0.3s;
+            border: none; cursor: pointer;
+            position: relative; overflow: hidden;
         }
         .btn-primary::before {
-            content: '';
-            position: absolute; top: 0; left: -100%;
+            content: ''; position: absolute; top: 0; left: -100%;
             width: 100%; height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
             transition: left 0.5s;
@@ -296,87 +228,51 @@
             box-shadow: 0 8px 30px rgba(200, 165, 85, 0.35);
         }
         .btn-secondary {
-            background: transparent;
-            color: var(--white);
-            padding: 0.9rem 2rem;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 1rem;
+            background: transparent; color: var(--white);
+            padding: 0.9rem 2rem; border-radius: 8px;
+            font-weight: 600; font-size: 1rem;
             text-decoration: none;
             border: 2px solid rgba(255,255,255,0.15);
             transition: all 0.3s;
         }
         .btn-secondary:hover {
-            border-color: var(--gold);
-            color: var(--gold);
+            border-color: var(--gold); color: var(--gold);
             background: rgba(200, 165, 85, 0.05);
         }
-
-        /* Hero visual — dashboard mockup */
-        .hero-visual {
-            position: relative;
-            opacity: 0; animation: slideInChat 1s 0.6s forwards;
-        }
+        /* Hero visual */
+        .hero-visual { position: relative; opacity: 0; animation: slideInChat 1s 0.6s forwards; }
         .hero-card {
             background: rgba(255,255,255,0.03);
             border: 1px solid rgba(200, 165, 85, 0.12);
-            border-radius: 16px;
-            padding: 1.8rem;
+            border-radius: 16px; padding: 1.8rem;
             backdrop-filter: blur(10px);
             animation: glow-pulse 4s infinite;
         }
-        .hero-card-header {
-            display: flex; align-items: center; gap: 0.8rem;
-            margin-bottom: 1.2rem;
-        }
-        .status-dot {
-            width: 10px; height: 10px;
-            background: var(--success); border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-        .hero-card-header span {
-            color: var(--gray-300); font-size: 0.82rem;
-        }
-        /* Mini chart in hero */
-        .hero-chart {
-            height: 80px;
-            display: flex; align-items: flex-end; gap: 3px;
-            margin-bottom: 1.2rem;
-            padding: 0 4px;
-        }
+        .hero-card-header { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.2rem; }
+        .status-dot { width: 10px; height: 10px; background: var(--success); border-radius: 50%; animation: pulse 2s infinite; }
+        .hero-card-header span { color: var(--gray-300); font-size: 0.82rem; }
+        .hero-chart { height: 80px; display: flex; align-items: flex-end; gap: 3px; margin-bottom: 1.2rem; padding: 0 4px; }
         .hero-chart-bar {
-            flex: 1;
-            background: linear-gradient(to top, var(--gold-dark), var(--gold));
-            border-radius: 3px 3px 0 0;
-            min-height: 8px;
-            transition: height 1s cubic-bezier(0.16, 1, 0.3, 1);
-            opacity: 0.7;
+            flex: 1; background: linear-gradient(to top, var(--gold-dark), var(--gold));
+            border-radius: 3px 3px 0 0; min-height: 8px;
+            transition: height 1s cubic-bezier(0.16, 1, 0.3, 1); opacity: 0.7;
         }
         .hero-chart-bar:hover { opacity: 1; }
         .metric-row {
             display: flex; justify-content: space-between; align-items: center;
-            padding: 0.7rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
+            padding: 0.7rem 0; border-bottom: 1px solid rgba(255,255,255,0.04);
         }
         .metric-row:last-child { border: none; }
         .metric-label { color: var(--gray-300); font-size: 0.82rem; }
-        .metric-value {
-            font-weight: 700; font-size: 0.92rem;
-            font-variant-numeric: tabular-nums;
-        }
+        .metric-value { font-weight: 700; font-size: 0.92rem; font-variant-numeric: tabular-nums; }
         .metric-up { color: var(--success); }
         .metric-down { color: var(--danger); }
         .metric-gold { color: var(--gold); }
-
-        .hero-stats {
-            display: grid; grid-template-columns: repeat(3, 1fr);
-            gap: 0.8rem; margin-top: 1.2rem;
-        }
+        .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin-top: 1.2rem; }
         .stat-mini {
             background: rgba(200, 165, 85, 0.06);
             border: 1px solid rgba(200, 165, 85, 0.1);
-            border-radius: 10px;
-            padding: 0.8rem; text-align: center;
+            border-radius: 10px; padding: 0.8rem; text-align: center;
             transition: all 0.3s;
         }
         .stat-mini:hover {
@@ -384,70 +280,49 @@
             border-color: rgba(200, 165, 85, 0.25);
             transform: translateY(-2px);
         }
-        .stat-mini-num {
-            font-size: 1.3rem; font-weight: 800;
-            color: var(--gold);
-        }
+        .stat-mini-num { font-size: 1.3rem; font-weight: 800; color: var(--gold); }
         .stat-mini-label {
             font-size: 0.68rem; color: var(--gray-300);
-            text-transform: uppercase; letter-spacing: 0.5px;
-            margin-top: 0.15rem;
+            text-transform: uppercase; letter-spacing: 0.5px; margin-top: 0.15rem;
         }
-
         /* ═══ SOCIAL PROOF TICKER ═══ */
         .ticker {
             background: var(--navy);
             border-top: 1px solid rgba(200, 165, 85, 0.08);
             border-bottom: 1px solid rgba(200, 165, 85, 0.08);
-            padding: 1rem 0;
-            overflow: hidden;
+            padding: 1rem 0; overflow: hidden;
         }
         .ticker-track {
             display: flex; gap: 3rem;
             animation: ticker 25s linear infinite;
             width: max-content;
         }
-        @keyframes ticker {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
         .ticker-item {
-            color: var(--gray-400);
-            font-size: 0.82rem;
-            font-weight: 500;
-            white-space: nowrap;
-            display: flex; align-items: center; gap: 0.5rem;
+            color: var(--gray-400); font-size: 0.82rem; font-weight: 500;
+            white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;
         }
         .ticker-item span { color: var(--gold); font-weight: 700; }
-
         /* ═══ SECTIONS ═══ */
         section { padding: 5rem 2rem; }
         .section-inner { max-width: 1100px; margin: 0 auto; }
         .section-label {
-            color: var(--gold);
-            font-size: 0.78rem; font-weight: 700;
+            color: var(--gold); font-size: 0.78rem; font-weight: 700;
             letter-spacing: 2.5px; text-transform: uppercase;
             margin-bottom: 0.8rem;
         }
         .section-title {
             font-family: 'Playfair Display', serif;
             font-size: clamp(1.8rem, 3vw, 2.5rem);
-            color: var(--navy);
-            margin-bottom: 1rem;
-            line-height: 1.2;
+            color: var(--navy); margin-bottom: 1rem; line-height: 1.2;
         }
         .section-subtitle {
-            color: var(--gray-600);
-            font-size: 1.05rem;
-            max-width: 600px;
-            margin-bottom: 3rem;
+            color: var(--gray-600); font-size: 1.05rem;
+            max-width: 600px; margin-bottom: 3rem;
         }
-
         /* ═══ PROCESS ═══ */
         .process { background: var(--gray-50); position: relative; }
         .process::before {
-            content: '';
-            position: absolute; top: 0; left: 0; right: 0;
+            content: ''; position: absolute; top: 0; left: 0; right: 0;
             height: 1px;
             background: linear-gradient(90deg, transparent, var(--gold-glow), transparent);
         }
@@ -456,18 +331,15 @@
             position: relative;
         }
         .process-steps::before {
-            content: '';
-            position: absolute;
+            content: ''; position: absolute;
             top: 30px; left: 10%; right: 10%;
             height: 2px;
             background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-dark));
             opacity: 0.2;
         }
         .step {
-            background: var(--white);
-            border-radius: 16px;
-            padding: 2rem 1.5rem;
-            position: relative;
+            background: var(--white); border-radius: 16px;
+            padding: 2rem 1.5rem; position: relative;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             border: 1px solid var(--gray-200);
         }
@@ -480,39 +352,25 @@
             display: inline-flex; align-items: center; justify-content: center;
             width: 44px; height: 44px;
             background: linear-gradient(135deg, var(--navy), var(--navy-mid));
-            color: var(--gold);
-            border-radius: 12px;
+            color: var(--gold); border-radius: 12px;
             font-weight: 800; font-size: 1.1rem;
-            margin-bottom: 1.2rem;
-            position: relative; z-index: 2;
+            margin-bottom: 1.2rem; position: relative; z-index: 2;
         }
-        .step h3 {
-            font-size: 1.05rem; font-weight: 700;
-            margin-bottom: 0.6rem;
-            color: var(--navy);
-        }
+        .step h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.6rem; color: var(--navy); }
         .step p { color: var(--gray-600); font-size: 0.88rem; line-height: 1.65; }
-
         /* ═══ MODULES ═══ */
-        .modules-grid {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
-        }
+        .modules-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
         .module-card {
-            background: var(--white);
-            border-radius: 16px;
-            padding: 2rem;
-            border: 1px solid var(--gray-200);
+            background: var(--white); border-radius: 16px;
+            padding: 2rem; border: 1px solid var(--gray-200);
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            overflow: hidden;
+            position: relative; overflow: hidden;
         }
         .module-card::before {
-            content: '';
-            position: absolute; top: 0; left: 0;
+            content: ''; position: absolute; top: 0; left: 0;
             width: 100%; height: 3px;
             background: linear-gradient(90deg, var(--gold), var(--gold-light));
-            transform: scaleX(0);
-            transform-origin: left;
+            transform: scaleX(0); transform-origin: left;
             transition: transform 0.4s ease;
         }
         .module-card:hover::before { transform: scaleX(1); }
@@ -527,210 +385,113 @@
             border-radius: 12px;
             display: flex; align-items: center; justify-content: center;
             margin-bottom: 1.2rem;
-            color: var(--gold);
-            font-weight: 800; font-size: 1rem;
+            color: var(--gold); font-weight: 800; font-size: 1rem;
         }
-        .module-card h3 {
-            font-size: 1.05rem; font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--navy);
-        }
+        .module-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--navy); }
         .module-card p { color: var(--gray-600); font-size: 0.86rem; line-height: 1.65; }
-
         /* ═══ INTERACTIVE DEMO ═══ */
         .demo-section {
             background: linear-gradient(135deg, var(--navy) 0%, #0D1620 100%);
-            color: var(--white);
-            overflow: hidden;
-            position: relative;
+            color: var(--white); overflow: hidden; position: relative;
         }
         .demo-section .section-title { color: var(--white); }
         .demo-section .section-subtitle { color: var(--gray-300); }
-        .demo-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: start;
-        }
+        .demo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
         .demo-dashboard {
             background: rgba(255,255,255,0.03);
             border: 1px solid rgba(200, 165, 85, 0.12);
-            border-radius: 16px;
-            overflow: hidden;
+            border-radius: 16px; overflow: hidden;
         }
         .demo-titlebar {
-            background: rgba(0,0,0,0.3);
-            padding: 0.7rem 1rem;
+            background: rgba(0,0,0,0.3); padding: 0.7rem 1rem;
             display: flex; align-items: center; gap: 0.5rem;
             border-bottom: 1px solid rgba(200, 165, 85, 0.08);
         }
-        .demo-dot {
-            width: 8px; height: 8px; border-radius: 50%;
-        }
+        .demo-dot { width: 8px; height: 8px; border-radius: 50%; }
         .demo-dot.red { background: #ff5f57; }
         .demo-dot.yellow { background: #ffbd2e; }
         .demo-dot.green { background: #28c840; }
-        .demo-titlebar span {
-            color: var(--gray-400); font-size: 0.75rem;
-            margin-left: 0.5rem;
-        }
+        .demo-titlebar span { color: var(--gray-400); font-size: 0.75rem; margin-left: 0.5rem; }
         .demo-body { padding: 1.5rem; }
-        .demo-kpi-row {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem;
-            margin-bottom: 1.5rem;
-        }
+        .demo-kpi-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin-bottom: 1.5rem; }
         .demo-kpi {
             background: rgba(255,255,255,0.04);
             border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 10px;
-            padding: 0.8rem;
-            text-align: center;
+            border-radius: 10px; padding: 0.8rem; text-align: center;
         }
-        .demo-kpi-val {
-            font-size: 1.2rem; font-weight: 800;
-            font-variant-numeric: tabular-nums;
-        }
-        .demo-kpi-label {
-            font-size: 0.68rem; color: var(--gray-400);
-            text-transform: uppercase; letter-spacing: 0.5px;
-            margin-top: 0.15rem;
-        }
-        .demo-chart-area {
-            background: rgba(255,255,255,0.02);
-            border-radius: 10px;
-            padding: 1rem;
-            margin-bottom: 1.2rem;
+        .demo-kpi-val { font-size: 1.2rem; font-weight: 800; font-variant-numeric: tabular-nums; }
+        .demo-kpi-label { font-size: 0.68rem; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 0.15rem; }
+        .demo-chart-área {
+            background: rgba(255,255,255,0.02); border-radius: 10px;
+            padding: 1rem; margin-bottom: 1.2rem;
             border: 1px solid rgba(255,255,255,0.04);
         }
-        .demo-chart-title {
-            font-size: 0.75rem; color: var(--gray-400);
-            text-transform: uppercase; letter-spacing: 1px;
-            margin-bottom: 0.8rem;
-        }
+        .demo-chart-title { font-size: 0.75rem; color: var(--gray-400); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.8rem; }
         .demo-chart-svg { width: 100%; height: 120px; }
-
-        /* Chat demo */
-        .demo-chat {
-            display: flex; flex-direction: column; gap: 1rem;
-        }
+        .demo-chat { display: flex; flex-direction: column; gap: 1rem; }
         .demo-chat-title {
-            font-size: 0.95rem; font-weight: 600;
-            color: var(--gold);
-            margin-bottom: 0.5rem;
-            display: flex; align-items: center; gap: 0.5rem;
+            font-size: 0.95rem; font-weight: 600; color: var(--gold);
+            margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;
         }
-        .demo-chat-desc {
-            font-size: 0.88rem; color: var(--gray-300);
-            margin-bottom: 1rem; line-height: 1.6;
-        }
+        .demo-chat-desc { font-size: 0.88rem; color: var(--gray-300); margin-bottom: 1rem; line-height: 1.6; }
         .chat-bubble {
-            padding: 0.8rem 1rem;
-            border-radius: 12px;
-            font-size: 0.85rem;
-            line-height: 1.55;
-            max-width: 92%;
+            padding: 0.8rem 1rem; border-radius: 12px;
+            font-size: 0.85rem; line-height: 1.55; max-width: 92%;
             opacity: 0;
         }
-        .chat-bubble.visible {
-            animation: slideInChat 0.5s forwards;
-        }
+        .chat-bubble.visible { animation: slideInChat 0.5s forwards; }
         .chat-user {
-            background: rgba(200, 165, 85, 0.15);
-            color: var(--gold-light);
+            background: rgba(200, 165, 85, 0.15); color: var(--gold-light);
             border: 1px solid rgba(200, 165, 85, 0.2);
-            align-self: flex-end;
-            border-bottom-right-radius: 4px;
+            align-self: flex-end; border-bottom-right-radius: 4px;
         }
         .chat-ai {
-            background: rgba(255,255,255,0.05);
-            color: var(--gray-300);
+            background: rgba(255,255,255,0.05); color: var(--gray-300);
             border: 1px solid rgba(255,255,255,0.08);
-            align-self: flex-start;
-            border-bottom-left-radius: 4px;
+            align-self: flex-start; border-bottom-left-radius: 4px;
         }
         .chat-ai strong { color: var(--white); }
-        .chat-typing {
-            display: flex; gap: 4px; padding: 0.6rem 1rem;
-        }
-        .chat-typing span {
-            width: 6px; height: 6px;
-            background: var(--gold);
-            border-radius: 50%;
-            animation: pulse 1.2s infinite;
-        }
+        .chat-typing { display: flex; gap: 4px; padding: 0.6rem 1rem; }
+        .chat-typing span { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; animation: pulse 1.2s infinite; }
         .chat-typing span:nth-child(2) { animation-delay: 0.2s; }
         .chat-typing span:nth-child(3) { animation-delay: 0.4s; }
-
-        /* Demo alert list */
-        .demo-alerts {
-            margin-top: 1rem;
-        }
+        .demo-alerts { margin-top: 1rem; }
         .demo-alert-item {
             display: flex; align-items: center; gap: 0.6rem;
             padding: 0.6rem 0.8rem;
-            background: rgba(255,255,255,0.03);
-            border-radius: 8px;
-            margin-bottom: 0.5rem;
-            border-left: 3px solid;
-            font-size: 0.8rem;
-            color: var(--gray-300);
-            opacity: 0;
-            transition: opacity 0.5s, transform 0.5s;
+            background: rgba(255,255,255,0.03); border-radius: 8px;
+            margin-bottom: 0.5rem; border-left: 3px solid;
+            font-size: 0.8rem; color: var(--gray-300);
+            opacity: 0; transition: opacity 0.5s, transform 0.5s;
             transform: translateX(-10px);
         }
-        .demo-alert-item.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
+        .demo-alert-item.visible { opacity: 1; transform: translateX(0); }
         .demo-alert-item strong { color: var(--white); }
-
         /* ═══ EPICA OS SECTION ═══ */
-        .epicaos-section {
-            background: var(--gray-50);
-        }
-        .epicaos-grid {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
-            align-items: center;
-        }
+        .epicaos-section { background: var(--gray-50); }
+        .epicaos-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
         .epicaos-features { display: flex; flex-direction: column; gap: 1.2rem; }
         .epicaos-feature {
             display: flex; gap: 1rem; align-items: flex-start;
-            padding: 1rem;
-            border-radius: 12px;
-            transition: all 0.3s;
+            padding: 1rem; border-radius: 12px; transition: all 0.3s;
         }
-        .epicaos-feature:hover {
-            background: var(--white);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
+        .epicaos-feature:hover { background: var(--white); box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
         .epicaos-feature-icon {
-            flex-shrink: 0;
-            width: 42px; height: 42px;
+            flex-shrink: 0; width: 42px; height: 42px;
             background: linear-gradient(135deg, var(--navy), var(--navy-light));
-            border-radius: 10px;
-            display: flex; align-items: center; justify-content: center;
-            color: var(--gold);
-            font-size: 0.85rem; font-weight: 800;
+            border-radius: 10px; display: flex; align-items: center; justify-content: center;
+            color: var(--gold); font-size: 0.85rem; font-weight: 800;
         }
-        .epicaos-feature h4 {
-            font-size: 0.95rem; font-weight: 700;
-            margin-bottom: 0.3rem;
-            color: var(--navy);
-        }
-        .epicaos-feature p {
-            color: var(--gray-600); font-size: 0.85rem; line-height: 1.55;
-        }
+        .epicaos-feature h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.3rem; color: var(--navy); }
+        .epicaos-feature p { color: var(--gray-600); font-size: 0.85rem; line-height: 1.55; }
         .epicaos-visual {
             background: var(--navy);
             border: 1px solid rgba(200, 165, 85, 0.12);
-            border-radius: 16px;
-            padding: 1.5rem;
-            position: relative;
-            overflow: hidden;
+            border-radius: 16px; padding: 1.5rem;
+            position: relative; overflow: hidden;
         }
         .epicaos-visual::before {
-            content: '';
-            position: absolute; top: -50%; right: -50%;
+            content: ''; position: absolute; top: -50%; right: -50%;
             width: 200px; height: 200px;
             background: radial-gradient(circle, rgba(200, 165, 85, 0.08), transparent);
             border-radius: 50%;
@@ -741,115 +502,76 @@
             margin-bottom: 0.8rem;
             display: flex; align-items: center; gap: 0.5rem;
         }
-        .alert-title-bar .live-dot {
-            width: 6px; height: 6px;
-            background: var(--success);
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
+        .alert-title-bar .live-dot { width: 6px; height: 6px; background: var(--success); border-radius: 50%; animation: pulse 2s infinite; }
         .alert-item {
             display: flex; align-items: flex-start; gap: 0.7rem;
             padding: 0.7rem 0.8rem;
-            background: rgba(255,255,255,0.03);
-            border-radius: 8px;
-            margin-bottom: 0.5rem;
-            border-left: 3px solid var(--gold);
+            background: rgba(255,255,255,0.03); border-radius: 8px;
+            margin-bottom: 0.5rem; border-left: 3px solid var(--gold);
             transition: all 0.3s;
         }
-        .alert-item:hover {
-            background: rgba(255,255,255,0.06);
-            transform: translateX(4px);
-        }
+        .alert-item:hover { background: rgba(255,255,255,0.06); transform: translateX(4px); }
         .alert-icon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
         .alert-text { font-size: 0.82rem; color: var(--gray-300); line-height: 1.5; }
         .alert-text strong { color: var(--white); }
-
-        /* ═══ BENEFITS / NUMBERS ═══ */
+        /* ═══ BENEFITS ═══ */
         .benefits { background: var(--white); }
-        .benefits-grid {
-            display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;
-        }
-        .benefit {
-            text-align: center; padding: 2rem 1rem;
-            border-radius: 16px;
-            transition: all 0.3s;
-        }
-        .benefit:hover {
-            background: var(--gray-50);
-            transform: translateY(-4px);
-        }
+        .benefits-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+        .benefit { text-align: center; padding: 2rem 1rem; border-radius: 16px; transition: all 0.3s; }
+        .benefit:hover { background: var(--gray-50); transform: translateY(-4px); }
         .benefit-number {
             font-family: 'Playfair Display', serif;
             font-size: 3rem; font-weight: 800;
-            color: var(--gold);
-            line-height: 1;
-            margin-bottom: 0.5rem;
+            color: var(--gold); line-height: 1; margin-bottom: 0.5rem;
         }
         .benefit-number .counter { display: inline; }
-        .benefit-label {
-            font-size: 0.95rem; font-weight: 700;
-            color: var(--navy);
-            margin-bottom: 0.4rem;
+        .benefit-label { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 0.4rem; }
+        .benefit-desc { font-size: 0.82rem; color: var(--gray-600); line-height: 1.5; }
+        /* ═══ TEAM ═══ */
+        .team-section { background: var(--white); }
+        .team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 800px; margin: 0 auto; }
+        .team-card {
+            background: var(--white); border-radius: 16px;
+            padding: 2rem; border: 1px solid var(--gray-200);
+            text-align: center; transition: all 0.3s;
         }
-        .benefit-desc {
-            font-size: 0.82rem; color: var(--gray-600); line-height: 1.5;
-        }
-
-        /* ═══ TESTIMONIALS ═══ */
-        .testimonials {
-            background: var(--gray-50);
-        }
-        .testimonials-grid {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
-        }
-        .testimonial-card {
-            background: var(--white);
-            border-radius: 16px;
-            padding: 2rem;
-            border: 1px solid var(--gray-200);
-            transition: all 0.3s;
-        }
-        .testimonial-card:hover {
+        .team-card:hover {
             box-shadow: 0 8px 30px rgba(0,0,0,0.06);
             transform: translateY(-4px);
         }
-        .testimonial-stars {
-            color: var(--gold); font-size: 0.9rem;
-            margin-bottom: 0.8rem;
-            letter-spacing: 2px;
+        .team-card img {
+            width: 100%; border-radius: 12px; margin-bottom: 1.2rem;
+            aspect-ratio: 1; object-fit: cover;
         }
-        .testimonial-text {
-            font-size: 0.9rem; color: var(--gray-600);
-            line-height: 1.65; font-style: italic;
-            margin-bottom: 1.2rem;
+        .team-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+        .team-card p { color: var(--gray-600); font-size: 0.86rem; line-height: 1.65; }
+        /* ═══ TESTIMONIALS ═══ */
+        .testimonials { background: var(--gray-50); }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .testimonial-card {
+            background: var(--white); border-radius: 16px;
+            padding: 2rem; border: 1px solid var(--gray-200);
+            transition: all 0.3s;
         }
-        .testimonial-author {
-            display: flex; align-items: center; gap: 0.8rem;
-        }
+        .testimonial-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.06); transform: translateY(-4px); }
+        .testimonial-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 0.8rem; letter-spacing: 2px; }
+        .testimonial-text { font-size: 0.9rem; color: var(--gray-600); line-height: 1.65; font-style: italic; margin-bottom: 1.2rem; }
+        .testimonial-author { display: flex; align-items: center; gap: 0.8rem; }
         .testimonial-avatar {
             width: 40px; height: 40px;
             background: linear-gradient(135deg, var(--navy), var(--navy-light));
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
             color: var(--gold); font-weight: 700; font-size: 0.85rem;
         }
-        .testimonial-name {
-            font-size: 0.88rem; font-weight: 600; color: var(--navy);
-        }
-        .testimonial-role {
-            font-size: 0.75rem; color: var(--gray-400);
-        }
-
+        .testimonial-name { font-size: 0.88rem; font-weight: 600; color: var(--navy); }
+        .testimonial-role { font-size: 0.75rem; color: var(--gray-400); }
         /* ═══ CTA ═══ */
         .cta {
             background: linear-gradient(135deg, var(--navy) 0%, #0D1620 100%);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+            text-align: center; position: relative; overflow: hidden;
         }
         .cta::before {
-            content: '';
-            position: absolute; top: -50%; left: 50%;
+            content: ''; position: absolute; top: -50%; left: 50%;
             transform: translateX(-50%);
             width: 600px; height: 600px;
             background: radial-gradient(circle, rgba(200, 165, 85, 0.06), transparent 70%);
@@ -857,21 +579,11 @@
         }
         .cta .section-inner { position: relative; z-index: 2; }
         .cta .section-title { color: var(--white); }
-        .cta p {
-            color: var(--gray-300);
-            font-size: 1.1rem;
-            max-width: 550px;
-            margin: 0 auto 2rem;
-        }
-        .cta-buttons {
-            display: flex; gap: 1rem;
-            justify-content: center; flex-wrap: wrap;
-        }
-
+        .cta p { color: var(--gray-300); font-size: 1.1rem; max-width: 550px; margin: 0 auto 2rem; }
+        .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
         /* ═══ FOOTER ═══ */
         footer {
-            background: #080D15;
-            color: var(--gray-300);
+            background: #080D15; color: var(--gray-300);
             padding: 3rem 2rem 1.5rem;
         }
         .footer-inner {
@@ -888,52 +600,32 @@
         .footer-col a {
             display: block; color: var(--gray-300);
             text-decoration: none; font-size: 0.85rem;
-            margin-bottom: 0.5rem;
-            transition: color 0.3s;
+            margin-bottom: 0.5rem; transition: color 0.3s;
         }
         .footer-col a:hover { color: var(--gold); }
         .footer-bottom {
             max-width: 1100px; margin: 2rem auto 0;
             padding-top: 1.5rem;
             border-top: 1px solid rgba(255,255,255,0.05);
-            text-align: center;
-            font-size: 0.78rem;
-            color: var(--gray-600);
+            text-align: center; font-size: 0.78rem; color: var(--gray-600);
         }
-
         /* ═══ HAMBURGER ═══ */
-        .hamburger {
-            display: none; cursor: pointer;
-            background: none; border: none; padding: 8px;
-        }
-        .hamburger span {
-            display: block; width: 22px; height: 2px;
-            background: var(--white); margin: 5px 0;
-            transition: 0.3s;
-        }
+        .hamburger { display: none; cursor: pointer; background: none; border: none; padding: 8px; }
+        .hamburger span { display: block; width: 22px; height: 2px; background: var(--white); margin: 5px 0; transition: 0.3s; }
         .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
         .hamburger.open span:nth-child(2) { opacity: 0; }
         .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
-
-        /* Mobile nav overlay */
         .mobile-nav {
-            display: none;
-            position: fixed; top: 70px; left: 0; right: 0;
+            display: none; position: fixed; top: 70px; left: 0; right: 0;
             background: rgba(17, 29, 46, 0.98);
             backdrop-filter: blur(16px);
-            padding: 1.5rem 2rem;
-            z-index: 99;
+            padding: 1.5rem 2rem; z-index: 99;
             flex-direction: column; gap: 1rem;
             border-bottom: 1px solid rgba(200, 165, 85, 0.15);
         }
         .mobile-nav.open { display: flex; }
-        .mobile-nav a {
-            color: var(--gray-300); text-decoration: none;
-            font-size: 1.1rem; font-weight: 500;
-            padding: 0.5rem 0;
-        }
+        .mobile-nav a { color: var(--gray-300); text-decoration: none; font-size: 1.1rem; font-weight: 500; padding: 0.5rem 0; }
         .mobile-nav a:hover { color: var(--gold); }
-
         /* ═══ RESPONSIVE ═══ */
         @media (max-width: 1024px) {
             .hero-inner { grid-template-columns: 1fr; text-align: center; }
@@ -949,6 +641,7 @@
             .epicaos-grid { grid-template-columns: 1fr; }
             .benefits-grid { grid-template-columns: repeat(2, 1fr); }
             .testimonials-grid { grid-template-columns: 1fr; }
+            .team-grid { grid-template-columns: 1fr; max-width: 400px; }
             .footer-inner { grid-template-columns: 1fr; }
         }
         @media (max-width: 600px) {
@@ -979,10 +672,10 @@
                 <span class="logo-text">EPICADATA</span>
             </a>
             <div class="nav-links">
-                <a href="#proceso">Proceso</a>
-                <a href="#modulos">Soluciones</a>
+                <a href="#servicios">Servicios</a>
                 <a href="#demo">Demo</a>
                 <a href="#epicaos">Epica OS</a>
+                <a href="#equipo">Equipo</a>
                 <a href="#contacto" class="btn-nav">Contacto</a>
             </div>
             <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -990,13 +683,12 @@
             </button>
         </div>
     </nav>
-
     <!-- Mobile nav -->
     <div class="mobile-nav" id="mobileNav">
-        <a href="#proceso">Proceso</a>
-        <a href="#modulos">Soluciones</a>
-        <a href="#demo">Demo en vivo</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#demo">Demo</a>
         <a href="#epicaos">Epica OS</a>
+        <a href="#equipo">Equipo</a>
         <a href="#contacto">Contacto</a>
     </div>
 
@@ -1007,12 +699,12 @@
             <div>
                 <div class="hero-badge">
                     <span class="badge-dot"></span>
-                    Inteligencia Artificial para PyMEs Argentinas
+                    Transformamos empresas con inteligencia artificial
                 </div>
                 <h1>El <span>sistema nervioso</span> que tu empresa necesita</h1>
-                <p>Analizamos, transformamos y conectamos cada area de tu negocio con IA. Control total, alertas inteligentes y decisiones basadas en datos reales.</p>
+                <p>Analizamos, transformamos y conectamos cada área de tu negocio con IA. Control total, alertas inteligentes y decisiones basadas en datos reales.</p>
                 <div class="hero-buttons">
-                    <a href="#contacto" class="btn-primary">Agendar consulta gratuita</a>
+                    <a href="https://calendly.com/epicadata-info/30min" target="_blank" class="btn-primary">Recibí tu diagnóstico gratuito</a>
                     <a href="#demo" class="btn-secondary">Ver demo en vivo</a>
                 </div>
             </div>
@@ -1047,7 +739,7 @@
                     </div>
                     <div class="stat-mini">
                         <div class="stat-mini-num">-60%</div>
-                        <div class="stat-mini-label">Tiempo de analisis</div>
+                        <div class="stat-mini-label">Tiempo de análisis</div>
                     </div>
                     <div class="stat-mini">
                         <div class="stat-mini-num">24/7</div>
@@ -1062,92 +754,94 @@
     <div class="ticker">
         <div class="ticker-track" id="tickerTrack">
             <div class="ticker-item"><span>+40%</span> productividad promedio</div>
-            <div class="ticker-item"><span>-60%</span> tiempo de analisis manual</div>
+            <div class="ticker-item"><span>-60%</span> tiempo de análisis manual</div>
             <div class="ticker-item"><span>24/7</span> monitoreo inteligente</div>
-            <div class="ticker-item"><span>6</span> modulos integrados</div>
-            <div class="ticker-item"><span>IA</span> con Claude de Anthropic</div>
+            <div class="ticker-item"><span>IA</span> de última generación</div>
             <div class="ticker-item"><span>100%</span> adaptado a Argentina</div>
             <div class="ticker-item"><span>AFIP</span> + BCRA + MercadoLibre</div>
             <div class="ticker-item"><span>Multi-empresa</span> en una sola plataforma</div>
-            <!-- duplicates for seamless loop -->
             <div class="ticker-item"><span>+40%</span> productividad promedio</div>
-            <div class="ticker-item"><span>-60%</span> tiempo de analisis manual</div>
+            <div class="ticker-item"><span>-60%</span> tiempo de análisis manual</div>
             <div class="ticker-item"><span>24/7</span> monitoreo inteligente</div>
-            <div class="ticker-item"><span>6</span> modulos integrados</div>
-            <div class="ticker-item"><span>IA</span> con Claude de Anthropic</div>
+            <div class="ticker-item"><span>IA</span> de última generación</div>
             <div class="ticker-item"><span>100%</span> adaptado a Argentina</div>
             <div class="ticker-item"><span>AFIP</span> + BCRA + MercadoLibre</div>
             <div class="ticker-item"><span>Multi-empresa</span> en una sola plataforma</div>
         </div>
     </div>
 
-    <!-- PROCESO -->
-    <section class="process" id="proceso">
+    <!-- SERVICIOS -->
+    <section id="servicios">
         <div class="section-inner">
-            <div class="section-label reveal">Nuestro proceso</div>
-            <h2 class="section-title reveal">De datos desordenados a decisiones inteligentes</h2>
-            <p class="section-subtitle reveal">Un camino claro de 4 pasos para transformar tu empresa con tecnologia que realmente funciona.</p>
-            <div class="process-steps">
-                <div class="step reveal stagger-1">
-                    <div class="step-num">1</div>
-                    <h3>Diagnostico</h3>
-                    <p>Analizamos cada area de tu empresa: procesos, datos, herramientas actuales y puntos de dolor. Entendemos tu negocio desde adentro.</p>
+            <div class="section-label reveal">Servicios</div>
+            <h2 class="section-title reveal">Soluciones reales para transformar tu empresa</h2>
+            <p class="section-subtitle reveal">No ofrecemos herramientas aisladas. Diseñamos e implementamos sistemas que conectan datos, automatización e inteligencia artificial para mejorar como opera y decide una empresa.</p>
+            <div class="modules-grid">
+                <div class="module-card reveal stagger-1">
+                    <div class="module-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/><path d="M12 1v6m0 6v6"/><path d="M4.22 4.22l4.24 4.24m5.08-4.24l4.24 4.24M4.22 19.78l4.24-4.24m5.08 4.24l4.24-4.24"/></svg></div>
+                    <h3>Automatización de procesos</h3>
+                    <p>Eliminamos tareas manuales integrando sistemas y automatizando flujos operativos clave.</p>
                 </div>
-                <div class="step reveal stagger-2">
-                    <div class="step-num">2</div>
-                    <h3>Transformacion de datos</h3>
-                    <p>Limpiamos, estructuramos y unificamos tu informacion. Tus datos dejan de estar en silos y empiezan a hablar entre si.</p>
+                <div class="module-card reveal stagger-2">
+                    <div class="module-icon">DB</div>
+                    <h3>Preparación de datos para IA</h3>
+                    <p>Limpiamos, estructuramos y organizamos tu información para habilitar inteligencia artificial real.</p>
                 </div>
-                <div class="step reveal stagger-3">
-                    <div class="step-num">3</div>
-                    <h3>Integracion IA</h3>
-                    <p>Conectamos Epica OS a tu empresa. Modulos inteligentes de ventas, stock, RRHH y mas se activan con tu data transformada.</p>
+                <div class="module-card reveal stagger-3">
+                    <div class="module-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 17"/><polyline points="17 6 23 6 23 12"/></svg></div>
+                    <h3>Ciencia de datos aplicada</h3>
+                    <p>Modelos predictivos de ventas, demanda y comportamiento para anticipar decisiones.</p>
                 </div>
-                <div class="step reveal stagger-4">
-                    <div class="step-num">4</div>
-                    <h3>Control total</h3>
-                    <p>El CEO y su equipo acceden a dashboards en vivo, alertas automaticas y sugerencias de IA. Decisiones con datos, no intuicion.</p>
+                <div class="module-card reveal stagger-1">
+                    <div class="module-icon">BI</div>
+                    <h3>Reporting y control de gestión</h3>
+                    <p>Dashboards ejecutivos en tiempo real con métricas claras para dirigir el negocio.</p>
+                </div>
+                <div class="module-card reveal stagger-2">
+                    <div class="module-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+                    <h3>Desarrollo de aplicaciones</h3>
+                    <p>Herramientas internas y soluciones digitales adaptadas a la operación real de la empresa.</p>
+                </div>
+                <div class="module-card reveal stagger-3">
+                    <div class="module-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+                    <h3>Análisis financiero</h3>
+                    <p>Modelización, rentabilidad y estructura financiera para mejorar decisiones estratégicas.</p>
+                </div>
+                <div class="module-card reveal stagger-1">
+                    <div class="module-icon">IA</div>
+                    <h3>Capacitación en IA</h3>
+                    <p>Entrenamos equipos para usar inteligencia artificial de forma práctica en el dia a dia.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- MODULOS -->
-    <section id="modulos">
+    <!-- PROCESO -->
+    <section class="process" id="proceso">
         <div class="section-inner">
-            <div class="section-label reveal">Soluciones</div>
-            <h2 class="section-title reveal">Modulos inteligentes que cubren toda tu operacion</h2>
-            <p class="section-subtitle reveal">Cada modulo se adapta a tu empresa y se potencia con inteligencia artificial.</p>
-            <div class="modules-grid">
-                <div class="module-card reveal stagger-1">
-                    <div class="module-icon">V</div>
-                    <h3>Ventas & Comercial</h3>
-                    <p>Analisis predictivo, seguimiento de oportunidades, reportes automaticos y alertas de cierre. Tu equipo comercial potenciado con IA.</p>
+            <div class="section-label reveal">Nuestro proceso</div>
+            <h2 class="section-title reveal">De datos desordenados a decisiones inteligentes</h2>
+            <p class="section-subtitle reveal">Un camino claro de 4 pasos para transformar tu empresa con tecnología que realmente funciona.</p>
+            <div class="process-steps">
+                <div class="step reveal stagger-1">
+                    <div class="step-num">1</div>
+                    <h3>Diagnóstico</h3>
+                    <p>Analizamos cada área de tu empresa: procesos, datos, herramientas actuales y puntos de dolor. Entendemos tu negocio desde adentro.</p>
                 </div>
-                <div class="module-card reveal stagger-2">
-                    <div class="module-icon">S</div>
-                    <h3>Stock & Logistica</h3>
-                    <p>Control de inventario inteligente, alertas de reposicion, prediccion de demanda y optimizacion de cadena de suministro.</p>
+                <div class="step reveal stagger-2">
+                    <div class="step-num">2</div>
+                    <h3>Transformación de datos</h3>
+                    <p>Limpiamos, estructuramos y unificamos tu información. Tus datos dejan de estar en silos y empiezan a hablar entre si.</p>
                 </div>
-                <div class="module-card reveal stagger-3">
-                    <div class="module-icon">RH</div>
-                    <h3>RRHH & Personas</h3>
-                    <p>Gestion de equipos, seguimiento de desempeno, automatizacion de procesos administrativos y chat IA para empleados.</p>
+                <div class="step reveal stagger-3">
+                    <div class="step-num">3</div>
+                    <h3>Integración IA</h3>
+                    <p>Conectamos Epica OS a tu empresa. Módulos inteligentes de ventas, stock, RRHH y más se activan con tu data transformada.</p>
                 </div>
-                <div class="module-card reveal stagger-1">
-                    <div class="module-icon">CH</div>
-                    <h3>Chat IA Vendedores</h3>
-                    <p>Asistente inteligente para tu fuerza de ventas. Respuestas instantaneas sobre productos, precios, stock y clientes.</p>
-                </div>
-                <div class="module-card reveal stagger-2">
-                    <div class="module-icon">AL</div>
-                    <h3>Alertas & Monitoreo</h3>
-                    <p>El sistema detecta anomalias, envia alertas en tiempo real y sugiere acciones correctivas antes de que el problema escale.</p>
-                </div>
-                <div class="module-card reveal stagger-3">
-                    <div class="module-icon">DB</div>
-                    <h3>Dashboard CEO</h3>
-                    <p>Vision 360 de tu empresa en un solo lugar. KPIs en vivo, tendencias, comparativos y reportes ejecutivos automaticos.</p>
+                <div class="step reveal stagger-4">
+                    <div class="step-num">4</div>
+                    <h3>Control total</h3>
+                    <p>El CEO y su equipo acceden a dashboards en vivo, alertas automáticas y sugerencias de IA. Decisiones con datos, no intuición.</p>
                 </div>
             </div>
         </div>
@@ -1157,11 +851,9 @@
     <section class="demo-section" id="demo">
         <div class="section-inner">
             <div class="section-label reveal" style="text-align:center;">Demo en vivo</div>
-            <h2 class="section-title reveal" style="text-align:center; color: var(--white);">Mira a Epica OS en accion</h2>
-            <p class="section-subtitle reveal" style="text-align:center; color: var(--gray-300); margin: 0 auto 3rem;">Asi se ve tu empresa cuando tiene un sistema nervioso inteligente funcionando 24/7.</p>
-
+            <h2 class="section-title reveal" style="text-align:center;">Mira a Epica OS en acción</h2>
+            <p class="section-subtitle reveal" style="text-align:center; color: var(--gray-300); margin: 0 auto 3rem;">Así se ve tu empresa cuando tiene un sistema nervioso inteligente funcionando 24/7.</p>
             <div class="demo-grid">
-                <!-- Dashboard mockup -->
                 <div class="demo-dashboard reveal-left">
                     <div class="demo-titlebar">
                         <div class="demo-dot red"></div>
@@ -1184,25 +876,23 @@
                                 <div class="demo-kpi-label">Clientes</div>
                             </div>
                         </div>
-                        <div class="demo-chart-area">
-                            <div class="demo-chart-title">Ventas ultimos 12 meses</div>
+                        <div class="demo-chart-área">
+                            <div class="demo-chart-title">Ventas últimos 12 meses</div>
                             <svg class="demo-chart-svg" id="demoChartSvg" viewBox="0 0 400 120" preserveAspectRatio="none"></svg>
                         </div>
                         <div class="demo-alerts">
                             <div class="demo-alert-item" style="border-color: var(--danger);">
-                                <strong>Stock critico:</strong>&nbsp;SKU-2847 por debajo del minimo
+                                <strong>Stock crítico:</strong>&nbsp;SKU-2847 por debajo del mínimo
                             </div>
                             <div class="demo-alert-item" style="border-color: var(--success);">
                                 <strong>Oportunidad:</strong>&nbsp;Corp SA aumento consultas 300%
                             </div>
                             <div class="demo-alert-item" style="border-color: var(--info);">
-                                <strong>Forecast:</strong>&nbsp;Ventas +18% proxima semana segun IA
+                                <strong>Forecast:</strong>&nbsp;Ventas +18% próxima semana según IA
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Chat IA demo -->
                 <div class="reveal-right">
                     <div class="demo-chat-title">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1211,10 +901,7 @@
                         Chat IA — Tu asistente ejecutivo
                     </div>
                     <p class="demo-chat-desc">Preguntale cualquier cosa sobre tu empresa en lenguaje natural. La IA analiza todos tus datos y responde con insights accionables.</p>
-
-                    <div class="demo-chat" id="demoChat">
-                        <!-- Bubbles will be animated in by JS -->
-                    </div>
+                    <div class="demo-chat" id="demoChat"></div>
                 </div>
             </div>
         </div>
@@ -1225,13 +912,13 @@
         <div class="section-inner">
             <div class="section-label reveal">Epica OS</div>
             <h2 class="section-title reveal">El cerebro de tu empresa, siempre activo</h2>
-            <p class="section-subtitle reveal">No es solo software. Es un sistema nervioso inteligente que conecta, monitorea y optimiza cada area de tu negocio.</p>
+            <p class="section-subtitle reveal">No es solo software. Es un sistema nervioso inteligente que conecta, monitorea y optimiza cada área de tu negocio.</p>
             <div class="epicaos-grid">
                 <div class="epicaos-features">
                     <div class="epicaos-feature reveal stagger-1">
                         <div class="epicaos-feature-icon">D</div>
                         <div>
-                            <h4>Deteccion proactiva</h4>
+                            <h4>Detección proactiva</h4>
                             <p>Identifica problemas antes de que impacten. Stock bajo, caida en ventas, rotacion de personal — vos te enteras primero.</p>
                         </div>
                     </div>
@@ -1239,13 +926,13 @@
                         <div class="epicaos-feature-icon">IA</div>
                         <div>
                             <h4>Sugerencias con IA</h4>
-                            <p>No solo detecta: sugiere. Acciones concretas basadas en datos historicos y patrones predictivos de tu negocio.</p>
+                            <p>No solo detecta: sugiere. Acciones concretas basadas en datos históricos y patrones predictivos de tu negocio.</p>
                         </div>
                     </div>
                     <div class="epicaos-feature reveal stagger-3">
                         <div class="epicaos-feature-icon">I</div>
                         <div>
-                            <h4>Integracion total</h4>
+                            <h4>Integración total</h4>
                             <p>Se conecta con tus herramientas: ERP, CRM, Excel, bases de datos. Todo unificado en un solo sistema inteligente.</p>
                         </div>
                     </div>
@@ -1253,14 +940,14 @@
                         <div class="epicaos-feature-icon">C</div>
                         <div>
                             <h4>Control del CEO</h4>
-                            <p>Roles, permisos y visibilidad configurables. El CEO tiene el panorama completo; cada area ve lo que necesita.</p>
+                            <p>Roles, permisos y visibilidad configurables. El CEO tiene el panorama completo; cada área ve lo que necesita.</p>
                         </div>
                     </div>
                     <div class="epicaos-feature reveal stagger-5">
                         <div class="epicaos-feature-icon">AR</div>
                         <div>
                             <h4>Contexto Argentina</h4>
-                            <p>Dolar blue en vivo, vencimientos AFIP, IPC, feriados. Tu negocio siempre contextualizado en la economia local.</p>
+                            <p>Dolar blue en vivo, vencimientos AFIP, IPC, feriados. Tu negocio siempre contextualizado en la economía local.</p>
                         </div>
                     </div>
                 </div>
@@ -1271,7 +958,7 @@
                     </div>
                     <div class="alert-item">
                         <span class="alert-icon" style="color: #f59e0b;">!</span>
-                        <span class="alert-text"><strong>Stock critico:</strong> Producto SKU-2847 por debajo del minimo. Sugerencia: lanzar orden de compra.</span>
+                        <span class="alert-text"><strong>Stock crítico:</strong> Producto SKU-2847 por debajo del mínimo. Sugerencia: lanzar orden de compra.</span>
                     </div>
                     <div class="alert-item">
                         <span class="alert-icon" style="color: var(--success);">^</span>
@@ -1299,71 +986,83 @@
         <div class="section-inner">
             <div class="section-label reveal" style="text-align:center;">Resultados</div>
             <h2 class="section-title reveal" style="text-align:center;">Lo que nuestros clientes logran</h2>
-            <p class="section-subtitle reveal" style="text-align:center; margin: 0 auto 3rem;">Resultados promedio de PyMEs que implementaron Epica OS en los primeros 6 meses.</p>
+            <p class="section-subtitle reveal" style="text-align:center; margin: 0 auto 3rem;">Resultados esperados basados en el análisis de procesos típicos de empresas.</p>
             <div class="benefits-grid">
                 <div class="benefit reveal stagger-1">
                     <div class="benefit-number"><span class="counter" data-target="40">0</span>%</div>
-                    <div class="benefit-label">Mas productividad</div>
-                    <div class="benefit-desc">Procesos automatizados y decisiones mas rapidas</div>
+                    <div class="benefit-label">Más productividad</div>
+                    <div class="benefit-desc">Procesos automatizados y decisiones más rápidas</div>
                 </div>
                 <div class="benefit reveal stagger-2">
                     <div class="benefit-number">-<span class="counter" data-target="60">0</span>%</div>
-                    <div class="benefit-label">Tiempo de analisis</div>
+                    <div class="benefit-label">Tiempo de análisis</div>
                     <div class="benefit-desc">De horas manuales a dashboards en tiempo real</div>
                 </div>
                 <div class="benefit reveal stagger-3">
                     <div class="benefit-number">+<span class="counter" data-target="25">0</span>%</div>
                     <div class="benefit-label">Cierre de ventas</div>
-                    <div class="benefit-desc">Equipos con la informacion justa en el momento justo</div>
+                    <div class="benefit-desc">Equipos con la información justa en el momento justo</div>
                 </div>
                 <div class="benefit reveal stagger-4">
                     <div class="benefit-number"><span class="counter" data-target="3">0</span>x</div>
-                    <div class="benefit-label">Velocidad de reaccion</div>
+                    <div class="benefit-label">Velocidad de reacción</div>
                     <div class="benefit-desc">Alertas proactivas antes de que el problema escale</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- TESTIMONIALS -->
-    <section class="testimonials">
+    <!-- QUIÉNES SOMOS -->
+    <section class="team-section" id="equipo">
         <div class="section-inner">
-            <div class="section-label reveal" style="text-align:center;">Confianza</div>
-            <h2 class="section-title reveal" style="text-align:center;">Lo que dicen nuestros clientes</h2>
-            <p class="section-subtitle reveal" style="text-align:center; margin: 0 auto 3rem;">Empresas reales, resultados reales.</p>
+            <div class="section-label reveal" style="text-align:center;">Quiénes somos</div>
+            <h2 class="section-title reveal" style="text-align:center;">Transformamos la forma en que las empresas operan y toman decisiones</h2>
+            <div class="reveal" style="max-width: 780px; margin: 0 auto 3rem; text-align: center;">
+                <p style="color: var(--gray-600); font-size: 1.05rem; line-height: 1.75; margin-bottom: 1.2rem;">Somos una consultora boutique de datos, automatización e inteligencia artificial aplicada a negocios. Trabajamos de forma cercana, estratégica y a medida, porque cada empresa tiene su propia lógica, sus procesos y su potencial.</p>
+                <p style="color: var(--gray-600); font-size: 1.05rem; line-height: 1.75; margin-bottom: 1.2rem;">Nuestro trabajo comienza con un análisis profundo de la estructura de información de la empresa: calidad de datos, integración entre áreas, madurez analítica y nivel de preparación para incorporar IA de forma realista y útil.</p>
+                <p style="color: var(--gray-600); font-size: 1.05rem; line-height: 1.75;">A partir de ese diagnóstico, diseñamos e implementamos soluciones concretas: apps de gestión, dashboards en tiempo real, automatización de procesos, asistentes internos con IA y herramientas orientadas a mejorar la rentabilidad — reduciendo costos, optimizando operaciones o impulsando ventas más inteligentes.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card reveal stagger-1">
+                    <img src="felipe.jpg" alt="Felipe Posse">
+                    <h3>Felipe Posse</h3>
+                    <p>Fundador. Economista y especialista en ciencia y análisis de datos, con experiencia en proyectos para pymes, multinacionales, organismos nacionales e instituciones internacionales. Su enfoque combina visión estratégica de negocio, rigurosidad analítica y orientación a resultados. Trabaja desde una premisa clara: comprender el ADN de cada organización antes de proponer soluciones.</p>
+                </div>
+                <div class="team-card reveal stagger-2">
+                    <img src="socia.jpg" alt="María José Ronchino">
+                    <h3>María José Ronchino</h3>
+                    <p>Fundadora. Contadora con más de 16 años de experiencia en gestión y sistemas dentro de organizaciones de gran escala, incluyendo su trayectoria en una de las principales instituciones de salud del país. Participó en el diseño e implementación de sistemas complejos, digitalizando procesos críticos con múltiples áreas y flujos de decisión. Aporta una mirada profunda sobre cómo transformar procesos ineficientes en sistemas claros, digitalizados y escalables.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <section class="testimonials">
+        <div class="section-inner">
+            <div class="section-label reveal" style="text-align:center;">Casos de uso</div>
+            <h2 class="section-title reveal" style="text-align:center;">Cómo Epica OS transforma distintos tipos de empresas</h2>
+            <p class="section-subtitle reveal" style="text-align:center; margin: 0 auto 3rem;">Scenarios reales donde nuestra plataforma genera impacto inmediato.</p>
             <div class="testimonials-grid">
                 <div class="testimonial-card reveal stagger-1">
-                    <div class="testimonial-stars">* * * * *</div>
-                    <p class="testimonial-text">Antes tardaba 2 horas armando reportes a mano. Ahora abro Epica OS y tengo todo al instante. Cambio la forma en que tomo decisiones.</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">MR</div>
-                        <div>
-                            <div class="testimonial-name">Martin R.</div>
-                            <div class="testimonial-role">CEO, Distribuidora Norte</div>
-                        </div>
+                    <div class="module-icon" style="margin-bottom: 1.2rem; width: 50px; height: 50px;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
                     </div>
+                    <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.8rem; color: var(--navy);">Distribuidora mayorista</h3>
+                    <p style="color: var(--gray-600); font-size: 0.9rem; line-height: 1.65;">Epica OS detecta quiebres de stock en tiempo real, optimiza órdenes de compra y conecta ventas con logística de forma automática. Resultado: -30% en rupturas, +15% en eficiencia operativa.</p>
                 </div>
                 <div class="testimonial-card reveal stagger-2">
-                    <div class="testimonial-stars">* * * * *</div>
-                    <p class="testimonial-text">Las alertas de stock me salvaron varias veces. El sistema detecto quiebres antes de que perdieramos ventas. Es como tener un analista 24/7.</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">LC</div>
-                        <div>
-                            <div class="testimonial-name">Laura C.</div>
-                            <div class="testimonial-role">Gerente Operaciones, TechParts</div>
-                        </div>
+                    <div class="module-icon" style="margin-bottom: 1.2rem; width: 50px; height: 50px;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
                     </div>
+                    <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.8rem; color: var(--navy);">Empresa de servicios</h3>
+                    <p style="color: var(--gray-600); font-size: 0.9rem; line-height: 1.65;">Gestión de RRHH integrada, tracking de rentabilidad por proyecto y alertas de facturación automatizadas. Controla márgenes en tiempo real y cierra mes sin sorpresas.</p>
                 </div>
                 <div class="testimonial-card reveal stagger-3">
-                    <div class="testimonial-stars">* * * * *</div>
-                    <p class="testimonial-text">El briefing diario del CEO es increible. Cada manana tengo un resumen con las 3 decisiones mas importantes del dia. No arranco sin leerlo.</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">JF</div>
-                        <div>
-                            <div class="testimonial-name">Jorge F.</div>
-                            <div class="testimonial-role">Director, Grupo Pampa</div>
-                        </div>
+                    <div class="module-icon" style="margin-bottom: 1.2rem; width: 50px; height: 50px;">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="9" y1="21" x2="9" y2="3"/><line x1="15" y1="21" x2="15" y2="3"/><path d="M3 7.2a2.2 2.2 0 0 1 2.2-2.2h13.6a2.2 2.2 0 0 1 2.2 2.2v.8a2.2 2.2 0 0 1-2.2 2.2H5.2A2.2 2.2 0 0 1 3 8v-.8z"/></svg>
                     </div>
+                    <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.8rem; color: var(--navy);">Comercio minorista</h3>
+                    <p style="color: var(--gray-600); font-size: 0.9rem; line-height: 1.65;">Integración POS, forecasting de demanda por SKU y análisis de margen en tiempo real por producto. Optimiza stock y precios con datos, no intuición.</p>
                 </div>
             </div>
         </div>
@@ -1372,12 +1071,13 @@
     <!-- CTA -->
     <section class="cta" id="contacto">
         <div class="section-inner" style="text-align:center;">
-            <div class="section-label reveal" style="text-align:center;">Empeza hoy</div>
+            <div class="section-label reveal" style="text-align:center;">Empieza hoy</div>
             <h2 class="section-title reveal" style="color: var(--white);">Tu empresa merece operar con inteligencia</h2>
-            <p class="reveal">Agenda una consulta gratuita. Analizamos tu situacion actual y te mostramos como Epica OS puede transformar tu operacion.</p>
+            <p class="reveal">Agendá una reunión de 30 minutos sin cargo. Analizamos tu situación actual y te mostramos cómo podemos transformar tu operación.</p>
             <div class="cta-buttons reveal">
-                <a href="mailto:contacto@epicadata.com.ar" class="btn-primary">Escribinos: contacto@epicadata.com.ar</a>
-                <a href="https://wa.me/5491100000000?text=Hola%20Epica%20Data!%20Me%20interesa%20conocer%20mas" class="btn-secondary" target="_blank">WhatsApp</a>
+                <a href="https://calendly.com/epicadata-info/30min" target="_blank" class="btn-primary">Agendar diagnóstico sin cargo</a>
+                <a href="https://wa.me/5491139193737" target="_blank" class="btn-secondary" style="border-color: #25D366; color: #25D366;">WhatsApp</a>
+                <a href="mailto:info@epicadata.ai" class="btn-secondary">info@epicadata.ai</a>
             </div>
         </div>
     </section>
@@ -1387,20 +1087,21 @@
         <div class="footer-inner">
             <div class="footer-brand">
                 <span class="logo-text">EPICADATA</span>
-                <p>Transformamos PyMEs con inteligencia artificial. Consultoria, analisis de datos y sistemas inteligentes para potenciar tu negocio.</p>
+                <p>Transformamos empresas con inteligencia artificial. Consultoría, análisis de datos y sistemas inteligentes para potenciar tu negocio.</p>
             </div>
             <div class="footer-col">
                 <h4>Soluciones</h4>
-                <a href="#modulos">Ventas & Comercial</a>
-                <a href="#modulos">Stock & Logistica</a>
-                <a href="#modulos">RRHH & Personas</a>
+                <a href="#servicios">Automatización</a>
+                <a href="#servicios">Ciencia de datos</a>
+                <a href="#servicios">Reporting</a>
                 <a href="#epicaos">Epica OS</a>
             </div>
             <div class="footer-col">
                 <h4>Contacto</h4>
-                <a href="mailto:contacto@epicadata.com.ar">contacto@epicadata.com.ar</a>
-                <a href="https://linkedin.com/company/epicadata" target="_blank">LinkedIn</a>
-                <a href="https://instagram.com/epicadata" target="_blank">Instagram</a>
+                <a href="mailto:info@epicadata.ai">info@epicadata.ai</a>
+                <a href="https://wa.me/5491139193737" target="_blank" rel="noopener noreferrer">WhatsApp: +54 9 11 3919-3737</a>
+                <a href="https://linkedin.com/company/epicadata" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://instagram.com/epicadata" target="_blank" rel="noopener noreferrer">Instagram</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -1409,24 +1110,19 @@
     </footer>
 
     <script>
-    // ═══ INTERSECTION OBSERVER — Scroll Animations ═══
+    // ═══ INTERSECTION OBSERVER ═══
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                // Counter animation
                 if (entry.target.querySelector('.counter')) {
                     entry.target.querySelectorAll('.counter').forEach(animateCounter);
                 }
             }
         });
     }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => observer.observe(el));
 
-    document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
-        observer.observe(el);
-    });
-
-    // ═══ COUNTER ANIMATION ═══
     function animateCounter(el) {
         if (el.dataset.counted) return;
         el.dataset.counted = 'true';
@@ -1436,20 +1132,18 @@
         function tick(now) {
             const elapsed = now - start;
             const progress = Math.min(elapsed / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+            const eased = 1 - Math.pow(1 - progress, 3);
             el.textContent = Math.round(target * eased);
             if (progress < 1) requestAnimationFrame(tick);
         }
         requestAnimationFrame(tick);
     }
 
-    // ═══ NAV SCROLL EFFECT ═══
+    // ═══ NAV SCROLL ═══
     const nav = document.getElementById('mainNav');
-    window.addEventListener('scroll', () => {
-        nav.classList.toggle('scrolled', window.scrollY > 50);
-    });
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 50); });
 
-    // ═══ HAMBURGER MENU ═══
+    // ═══ HAMBURGER ═══
     const hamburger = document.getElementById('hamburger');
     const mobileNav = document.getElementById('mobileNav');
     hamburger.addEventListener('click', () => {
@@ -1475,7 +1169,7 @@
         particlesContainer.appendChild(p);
     }
 
-    // ═══ HERO ANIMATED CHART ═══
+    // ═══ HERO CHART ═══
     const chartData = [35, 42, 38, 55, 48, 62, 58, 72, 65, 78, 85, 92];
     const heroChart = document.getElementById('heroChart');
     chartData.forEach((val, i) => {
@@ -1486,16 +1180,13 @@
         setTimeout(() => { bar.style.height = val + '%'; }, 800 + i * 100);
     });
 
-    // ═══ HERO ANIMATED METRICS ═══
+    // ═══ HERO METRICS ═══
     function animateHeroMetric(id, text, delay) {
         setTimeout(() => {
             const el = document.getElementById(id);
             el.style.transition = 'opacity 0.5s';
             el.style.opacity = '0';
-            setTimeout(() => {
-                el.textContent = text;
-                el.style.opacity = '1';
-            }, 300);
+            setTimeout(() => { el.textContent = text; el.style.opacity = '1'; }, 300);
         }, delay);
     }
     animateHeroMetric('heroVentas', '$2.4M (+18%)', 1500);
@@ -1503,7 +1194,7 @@
     animateHeroMetric('heroEficiencia', '94.2%', 2100);
     animateHeroMetric('heroAlertas', '47/52', 2400);
 
-    // ═══ DEMO SECTION — Animated Chart SVG ═══
+    // ═══ DEMO SECTION ═══
     const demoChartObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -1515,7 +1206,6 @@
             }
         });
     }, { threshold: 0.3 });
-
     const demoSection = document.getElementById('demo');
     if (demoSection) demoChartObserver.observe(demoSection);
 
@@ -1526,8 +1216,6 @@
         const maxVal = Math.max(...data);
         const w = 400, h = 120, pad = 5;
         const stepX = (w - 2 * pad) / (data.length - 1);
-
-        // Area fill
         let areaPath = `M ${pad} ${h - pad}`;
         data.forEach((v, i) => {
             const x = pad + i * stepX;
@@ -1535,7 +1223,6 @@
             areaPath += ` L ${x} ${y}`;
         });
         areaPath += ` L ${pad + (data.length - 1) * stepX} ${h - pad} Z`;
-
         const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
         const grad = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
         grad.setAttribute('id', 'chartGrad');
@@ -1548,13 +1235,10 @@
         grad.appendChild(stop1); grad.appendChild(stop2);
         defs.appendChild(grad);
         svg.appendChild(defs);
-
-        const area = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        area.setAttribute('d', areaPath);
-        area.setAttribute('fill', 'url(#chartGrad)');
-        svg.appendChild(area);
-
-        // Line
+        const área = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        área.setAttribute('d', areaPath);
+        área.setAttribute('fill', 'url(#chartGrad)');
+        svg.appendChild(área);
         let linePath = '';
         data.forEach((v, i) => {
             const x = pad + i * stepX;
@@ -1569,10 +1253,8 @@
         const totalLength = line.getTotalLength ? line.getTotalLength() : 600;
         line.setAttribute('stroke-dasharray', totalLength);
         line.setAttribute('stroke-dashoffset', totalLength);
-        line.style.animation = `dash-draw 2s ease forwards`;
+        line.style.animation = 'dash-draw 2s ease forwards';
         svg.appendChild(line);
-
-        // Dots
         data.forEach((v, i) => {
             const x = pad + i * stepX;
             const y = h - pad - (v / maxVal) * (h - 2 * pad);
@@ -1599,13 +1281,9 @@
                 const progress = Math.min(elapsed / duration, 1);
                 const eased = 1 - Math.pow(1 - progress, 3);
                 let val = target * eased;
-                if (target >= 10000) {
-                    el.textContent = prefix + (val / 1000000).toFixed(1) + 'M' + suffix;
-                } else if (target >= 100) {
-                    el.textContent = prefix + Math.round(val) + suffix;
-                } else {
-                    el.textContent = prefix + val.toFixed(1) + suffix;
-                }
+                if (target >= 10000) el.textContent = prefix + (val / 1000000).toFixed(1) + 'M' + suffix;
+                else if (target >= 100) el.textContent = prefix + Math.round(val) + suffix;
+                else el.textContent = prefix + val.toFixed(1) + suffix;
                 if (progress < 1) requestAnimationFrame(tick);
             }
             requestAnimationFrame(tick);
@@ -1618,12 +1296,12 @@
         });
     }
 
-    // ═══ CHAT BUBBLES ANIMATION ═══
+    // ═══ CHAT BUBBLES ═══
     const chatMessages = [
         { type: 'user', text: 'Como van las ventas esta semana?' },
         { type: 'ai', text: '<strong>Ventas semana actual: $892K</strong> (+18% vs semana anterior). Tu producto estrella es SKU-1205 con 34 unidades. Detecte que el cliente Grupo Sur no compro este mes — te sugiero contactarlo.' },
         { type: 'user', text: 'Y como esta la caja? Puedo pagar sueldos tranquilo?' },
-        { type: 'ai', text: '<strong>Caja actual: $3.2M.</strong> Con los cobros pendientes de $1.8M y gastos fijos, tenes cobertura hasta el 15/04. Los sueldos estan cubiertos. Ojo: 2 facturas de Corp SA vencen manana ($420K).' },
+        { type: 'ai', text: '<strong>Caja actual: $3.2M.</strong> Con los cobros pendientes de $1.8M y gastos fijos, tenes cobertura hasta el 15/04. Los sueldos estan cubiertos. Ojo: 2 facturas de Corp SA vencen mañana ($420K).' },
     ];
 
     function animateChatBubbles() {
@@ -1631,44 +1309,36 @@
         if (!chat || chat.dataset.animated) return;
         chat.dataset.animated = 'true';
         chat.innerHTML = '';
-
         chatMessages.forEach((msg, i) => {
             setTimeout(() => {
-                // Show typing first for AI
                 if (msg.type === 'ai') {
                     const typing = document.createElement('div');
                     typing.className = 'chat-bubble chat-ai chat-typing visible';
                     typing.innerHTML = '<span></span><span></span><span></span>';
                     chat.appendChild(typing);
-                    chat.scrollTop = chat.scrollHeight;
-
                     setTimeout(() => {
                         typing.remove();
                         const bubble = document.createElement('div');
                         bubble.className = `chat-bubble chat-${msg.type} visible`;
                         bubble.innerHTML = msg.text;
                         chat.appendChild(bubble);
-                        chat.scrollTop = chat.scrollHeight;
                     }, 800);
                 } else {
                     const bubble = document.createElement('div');
                     bubble.className = `chat-bubble chat-${msg.type} visible`;
                     bubble.innerHTML = msg.text;
                     chat.appendChild(bubble);
-                    chat.scrollTop = chat.scrollHeight;
                 }
             }, i * 2500);
         });
     }
 
-    // ═══ SMOOTH SCROLL FOR NAV LINKS ═══
+    // ═══ SMOOTH SCROLL ═══
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     });
     </script>
